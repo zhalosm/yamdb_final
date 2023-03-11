@@ -1,28 +1,28 @@
-from django.db.models import Avg
 from django.core.mail import send_mail
 from django.db import IntegrityError
+from django.db.models import Avg
 from django.shortcuts import get_object_or_404
-from rest_framework import generics, permissions
-from rest_framework import viewsets, status, filters
-from rest_framework.pagination import (
-    PageNumberPagination, LimitOffsetPagination)
+from django.utils.crypto import get_random_string
+from rest_framework import filters, generics, permissions, status, viewsets
+from rest_framework.decorators import action
+from rest_framework.pagination import (LimitOffsetPagination,
+                                       PageNumberPagination)
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-from reviews.models import Review, Title, Genre, Category
+from reviews.models import Category, Genre, Review, Title
 from users.models import User
-from .filters import TitleFilter
-from .permissions import (
-    AdminOnly, AdminOrAuthorOnly,
-    AdminOrReadOnly, IsAuthorOrReadOnlyPermission)
-from .serializers import (
-    SignUpSerializer, UsersSerializer, UsersMeSerializer,
-    GetTokenSerializer, CategorySerializer, GenreSerializer,
-    TitleReadSerializer, TitlePostSerializer, ReviewSerializer,
-    CommentSerializer)
+
 from api_yamdb.settings import FROM_EMAIL
+
+from .filters import TitleFilter
 from .mixins import CustomViewSet
-from django.utils.crypto import get_random_string
-from rest_framework.decorators import action
+from .permissions import (AdminOnly, AdminOrAuthorOnly, AdminOrReadOnly,
+                          IsAuthorOrReadOnlyPermission)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, GetTokenSerializer,
+                          ReviewSerializer, SignUpSerializer,
+                          TitlePostSerializer, TitleReadSerializer,
+                          UsersMeSerializer, UsersSerializer)
 
 
 class SignupApiView(generics.CreateAPIView):
