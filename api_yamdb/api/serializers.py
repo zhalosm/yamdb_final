@@ -2,8 +2,8 @@ from datetime import datetime
 
 from rest_framework import serializers, validators
 from rest_framework.exceptions import ValidationError
+from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
-from reviews.models import Category, Genre, Title, Review, Comment
 
 
 class SignUpSerializer(serializers.ModelSerializer):
