@@ -8,9 +8,7 @@ services:
     env_file:
       - ./.env
   web:
-    build:
-      image: zhalosm/api_yamdb-web:latest
-      context: ../
+    image: zhalosm/api_yamdb-web:latest
     restart: always
     volumes:
       - static_value:/app/static/
