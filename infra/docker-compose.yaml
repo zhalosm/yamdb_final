@@ -1,5 +1,10 @@
 version: '3.8'
 
+volumes:
+  static_value:
+  media_value:
+  database:
+
 services:
   db:
     image: postgres:13.0-alpine
@@ -31,6 +36,4 @@ services:
     depends_on:
       - web
 
-volumes:
-  static_value:
-  media_value:
+
