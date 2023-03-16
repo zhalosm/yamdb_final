@@ -10,11 +10,7 @@ Rest api проекта yamdb. Проект собирает отзывы пол
 - автоматический деплой проекта на боевой сервер
 - отправка уведомления в Telegram о том, что процесс деплоя успешно завершился
 
-<<<<<<< HEAD
-![example workflow](https://github.com/zhalosm/yamdb_final/actions/workflows/main.yml/badge.svg)
-=======
-![example workflow](https://github.com/zhalosm/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
->>>>>>> ff644a7f9f01920b7c9130cebde17d6d41517877
+![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=master)
 
 # Стэк технологий
 
@@ -133,19 +129,19 @@ TELEGRAM_TOKEN = токен бота
 Выполняем миграцию:
 
 ```
-docker-compose exec web python manage.py migrate
+sudo docker-compose exec web python manage.py migrate
 ```
 
 Создаем суперпользователя:
 
 ```
-docker-compose exec web python manage.py createsuperuser
+sudo docker-compose exec web python manage.py createsuperuser
 ```
 
 Собираем статику:
 
 ```
-docker-compose exec web python manage.py collectstatic --no-input
+sudo docker-compose exec web python manage.py collectstatic --no-input
 ```
 
 # Примеры запросов к API
