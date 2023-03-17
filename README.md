@@ -10,7 +10,7 @@ Rest api проекта yamdb. Проект собирает отзывы пол
 - автоматический деплой проекта на боевой сервер
 - отправка уведомления в Telegram о том, что процесс деплоя успешно завершился
 
-![example workflow](https://github.com/zhalosm/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+### ![example workflow](https://github.com/zhalosm/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 # Стэк технологий
